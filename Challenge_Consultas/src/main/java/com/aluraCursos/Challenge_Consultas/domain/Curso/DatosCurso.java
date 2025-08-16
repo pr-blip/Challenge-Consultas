@@ -1,4 +1,4 @@
-package com.aluraCursos.Challenge_Consultas.Curso;
+package com.aluraCursos.Challenge_Consultas.domain.Curso;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;

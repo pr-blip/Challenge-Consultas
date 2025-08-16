@@ -1,7 +1,7 @@
-package com.aluraCursos.Challenge_Consultas.Usuario;
+package com.aluraCursos.Challenge_Consultas.domain.Usuario;
 
 
-import com.aluraCursos.Challenge_Consultas.Perfil.Perfil;
+import com.aluraCursos.Challenge_Consultas.domain.Perfil.Perfil;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;

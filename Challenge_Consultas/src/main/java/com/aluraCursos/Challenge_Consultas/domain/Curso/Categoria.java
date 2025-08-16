@@ -1,4 +1,4 @@
-package com.aluraCursos.Challenge_Consultas.Curso;
+package com.aluraCursos.Challenge_Consultas.domain.Curso;
 
 public enum Categoria {
     BACKEND,

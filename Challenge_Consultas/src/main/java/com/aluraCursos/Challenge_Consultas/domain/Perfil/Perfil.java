@@ -1,4 +1,4 @@
-package com.aluraCursos.Challenge_Consultas.Perfil;
+package com.aluraCursos.Challenge_Consultas.domain.Perfil;
 
 
 import jakarta.persistence.*;

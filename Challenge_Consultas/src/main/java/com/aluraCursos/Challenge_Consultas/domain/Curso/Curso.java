@@ -1,8 +1,8 @@
-package com.aluraCursos.Challenge_Consultas.Curso;
+package com.aluraCursos.Challenge_Consultas.domain.Curso;
 
 
 
-import com.aluraCursos.Challenge_Consultas.Topico.Topico;
+import com.aluraCursos.Challenge_Consultas.domain.Topico.Topico;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;

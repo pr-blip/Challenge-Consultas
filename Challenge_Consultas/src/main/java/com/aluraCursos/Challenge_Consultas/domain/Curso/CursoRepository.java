@@ -1,4 +1,4 @@
-package com.aluraCursos.Challenge_Consultas.Curso;
+package com.aluraCursos.Challenge_Consultas.domain.Curso;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

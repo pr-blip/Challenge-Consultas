@@ -1,9 +1,9 @@
-package com.aluraCursos.Challenge_Consultas.Topico;
+package com.aluraCursos.Challenge_Consultas.domain.Topico;
 
 
-import com.aluraCursos.Challenge_Consultas.Curso.Curso;
-import com.aluraCursos.Challenge_Consultas.Respuesta.Respuesta;
-import com.aluraCursos.Challenge_Consultas.Usuario.Usuario;
+import com.aluraCursos.Challenge_Consultas.domain.Curso.Curso;
+import com.aluraCursos.Challenge_Consultas.domain.Respuesta.Respuesta;
+import com.aluraCursos.Challenge_Consultas.domain.Usuario.Usuario;
 import jakarta.persistence.*;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
@@ -15,7 +15,10 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-@Table(name="topicos")
+@Table(
+        name="topicos",
+        uniqueConstraints = @UniqueConstraint(columnNames= {"titulo", "mensaje"})
+)
 @Entity(name="Topico")
 @Getter
 @NoArgsConstructor
