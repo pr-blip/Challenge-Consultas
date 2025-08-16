@@ -1,11 +1,11 @@
 package com.aluraCursos.Challenge_Consultas.Controller;
 
 
-import com.aluraCursos.Challenge_Consultas.Curso.CursoRepository;
-import com.aluraCursos.Challenge_Consultas.Perfil.PerfilRepository;
-import com.aluraCursos.Challenge_Consultas.Respuesta.RespuestaRepository;
-import com.aluraCursos.Challenge_Consultas.Topico.*;
-import com.aluraCursos.Challenge_Consultas.Usuario.UsuarioRepository;
+import com.aluraCursos.Challenge_Consultas.domain.Curso.CursoRepository;
+import com.aluraCursos.Challenge_Consultas.domain.Perfil.PerfilRepository;
+import com.aluraCursos.Challenge_Consultas.domain.Respuesta.RespuestaRepository;
+import com.aluraCursos.Challenge_Consultas.domain.Topico.*;
+import com.aluraCursos.Challenge_Consultas.domain.Usuario.UsuarioRepository;
 import jakarta.persistence.EntityNotFoundException;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,6 +42,14 @@ public class TopicoController {
     @PostMapping
     public ResponseEntity registrar(@RequestBody @Valid DatosRegistroTopico datos, UriComponentsBuilder uriComponentsBuilder){
 
+        //Verifica si ya existe un tópico con el mismo título y mensaje
+        if(repository.existsByTituloAndMensaje(datos.titulo(), datos.mensaje())){
+            return ResponseEntity
+                    .badRequest()
+                    .body("Ya existe un tópico con ese título y mensaje");
+
+        }
+
         var autor = usuarioRepository.findById(datos.usuarioId())
                 .orElseThrow(()->new EntityNotFoundException("Usuario no encontrado"));
 
@@ -57,7 +65,7 @@ public class TopicoController {
     }
     //Endpoint para listar todos los tópicos
     @GetMapping
-    public ResponseEntity<Page<DatosListaTopico>> listar( @PageableDefault(size=10, sort = {"titulo"}) Pageable paginacion){
+    public ResponseEntity<Page<DatosListaTopico>> listar(@PageableDefault(size=10, sort = {"titulo"}) Pageable paginacion){
         var page = repository.findAll(paginacion).map(DatosListaTopico::new);
 
         return ResponseEntity.ok(page);
