@@ -9,7 +9,8 @@ Este proyecto permite hacer consultas sobre tópicos específicos relacionados c
 - Spring Boot
 - Spring Security con JWT
 - JPA / Hibernate
-- Base de datos H2 / PostgreSQL
+- Base de datos MySQL
+- Maven
 
 ## Funcionalidades principales
 
