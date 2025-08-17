@@ -1,4 +1,4 @@
-package com.aluraCursos.Challenge_Consultas.infra;
+package com.aluraCursos.Challenge_Consultas.infra.exceptions;
 
 
 import jakarta.persistence.EntityNotFoundException;
